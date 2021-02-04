@@ -6,7 +6,12 @@
   "author": "Fynn <fynn.90@outlook.com>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon ./src/index.ts",
+    "demo1": "nodemon ./demo1/index.ts",
+    "demo2": "nodemon ./demo2/index.ts",
+    "demo3": "nodemon ./demo3/index.ts",
+    "demo4": "nodemon ./demo4/index.ts",
+    "demo5": "nodemon ./demo5/index.ts",
+    "demo6": "nodemon ./demo6/index.ts",
     "test": "jest"
   },
   "dependencies": {

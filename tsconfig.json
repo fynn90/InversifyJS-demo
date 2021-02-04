@@ -15,5 +15,5 @@
       "jest"
     ],
   },
-  "include": ["src/**/*"]
+  "include": ["**/**/*", "demo1/tests/types.ts", "demo1/interfaces.ts", "demo1/index.ts", "demo1/inversify.config.ts", "demo1/tests"]
 }
