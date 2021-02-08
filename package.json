@@ -12,6 +12,10 @@
     "demo4": "nodemon ./demo4/index.ts",
     "demo5": "nodemon ./demo5/index.ts",
     "demo6": "nodemon ./demo6/index.ts",
+    "demo7": "nodemon ./demo7/index.ts",
+    "demo8": "nodemon ./demo8/index.ts",
+    "demo9": "nodemon ./demo9/index.ts",
+    "demo10": "nodemon ./demo10/index.ts",
     "test": "jest"
   },
   "dependencies": {
