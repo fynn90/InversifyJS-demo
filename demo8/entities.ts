@@ -1,7 +1,7 @@
 /*
  * @Author: Fan
  * @Date: 2021-02-07 11:06:09
- * @description: 
+ * @description:
  */
 
 import { injectable, postConstruct } from "inversify";
@@ -10,11 +10,11 @@ import { IKatana } from "./types";
 @injectable()
 class Katana implements IKatana {
   constructor() {
-    console.log("Katana is born!")
+    console.log("Katana is born!");
   }
 
   public use() {
-    return "Used Katana!"
+    return "Used Katana!";
   }
 
   /**
@@ -25,8 +25,8 @@ class Katana implements IKatana {
    */
   @postConstruct()
   public testMethod() {
-    console.log("testMethod")
+    console.log("testMethod");
   }
 }
 
-export {Katana}
+export { Katana };

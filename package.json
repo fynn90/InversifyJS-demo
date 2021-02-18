@@ -16,6 +16,7 @@
     "demo8": "nodemon ./demo8/index.ts",
     "demo9": "nodemon ./demo9/index.ts",
     "demo10": "nodemon ./demo10/index.ts",
+    "demo11": "nodemon ./demo11/index.ts",
     "test": "jest"
   },
   "dependencies": {

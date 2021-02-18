@@ -1,7 +1,7 @@
 /*
  * @Author: Fan
  * @Date: 2021-02-02 19:03:47
- * @description: 
+ * @description:
  */
 export interface Warrior {
   fight(): string;
@@ -13,5 +13,5 @@ export interface Weapon {
 }
 
 export interface ThrowableWeapon {
-  throw():string
+  throw(): string;
 }

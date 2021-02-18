@@ -1,27 +1,27 @@
 /*
  * @Author: Fan
  * @Date: 2021-02-02 19:14:03
- * @description: 
+ * @description:
  */
-import {injectable, inject} from "inversify";
+import { injectable, inject } from "inversify";
 import "reflect-metadata";
-import {Weapon, ThrowableWeapon, Warrior} from "./interfaces"
+import { Weapon, ThrowableWeapon, Warrior } from "./interfaces";
 import { TYPES } from "./types";
 
 @injectable()
 class Katana implements Weapon {
   public hit() {
-    return 'cut!'
+    return "cut!";
   }
 }
 
 @injectable()
 class Shuriken implements ThrowableWeapon, Weapon {
   public throw() {
-    return 'hit!'
+    return "hit!";
   }
   public hit() {
-    return "hit!!"
+    return "hit!!";
   }
 }
 
@@ -45,4 +45,4 @@ class Ninja implements Warrior {
   }
 }
 
-export {Ninja, Katana, Shuriken}
+export { Ninja, Katana, Shuriken };

@@ -1,29 +1,28 @@
 /*
  * @Author: Fan
  * @Date: 2021-02-02 19:14:03
- * @description: 
+ * @description:
  */
-import {injectable, inject} from "inversify";
+import { injectable, inject } from "inversify";
 import "reflect-metadata";
-import {Weapon, ThrowableWeapon, Warrior} from "./interfaces"
+import { Weapon, ThrowableWeapon, Warrior } from "./interfaces";
 import { TYPES } from "./types";
 
 @injectable()
 class Katana implements Weapon {
   public hit() {
-    return 'cut!'
+    return "cut!";
   }
 }
 
 interface Newable<T> {
-  new (): T
+  new (): T;
 }
-
 
 @injectable()
 class Shuriken implements ThrowableWeapon {
   public throw() {
-    return 'hit!'
+    return "hit!";
   }
 }
 
@@ -32,10 +31,9 @@ class Ninja implements Warrior {
   private _katana: Weapon;
   private _shuriken: ThrowableWeapon;
 
-
   public constructor(
     // 绑定构造器
-    @inject('Newable<Katana>') katana: Newable<Weapon>,
+    @inject("Newable<Katana>") katana: Newable<Weapon>,
     @inject(TYPES.ThrowableWeapon) shuriken: ThrowableWeapon
   ) {
     this._katana = new katana();
@@ -49,4 +47,4 @@ class Ninja implements Warrior {
   }
 }
 
-export {Ninja, Katana, Shuriken}
+export { Ninja, Katana, Shuriken };

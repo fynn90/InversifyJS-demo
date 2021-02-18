@@ -1,38 +1,38 @@
 /*
  * @Author: Fan
  * @Date: 2021-02-02 19:14:03
- * @description: 
+ * @description:
  */
-import {injectable, inject} from "inversify";
+import { injectable, inject } from "inversify";
 import "reflect-metadata";
-import {Weapon, ThrowableWeapon, Warrior} from "./interfaces"
+import { Weapon, ThrowableWeapon, Warrior } from "./interfaces";
 import { TYPES } from "./types";
 
 @injectable()
 class Katana implements Weapon {
   public hit() {
-    return 'cut!'
+    return "cut!";
   }
 }
 
 @injectable()
 class Shuriken implements ThrowableWeapon {
   public throw() {
-    return 'hit!'
+    return "hit!";
   }
 }
 
-export type KatanaProvider = () => Promise<Weapon>
+export type KatanaProvider = () => Promise<Weapon>;
 
 @injectable()
 class Ninja implements Warrior {
-  public katana: Weapon|null;
+  public katana: Weapon | null;
   public shuriken: ThrowableWeapon;
   public katanaProvider: KatanaProvider;
 
   public constructor(
     // 绑定 Promise
-    @inject('KatanaProvider') katanaProvider: KatanaProvider,
+    @inject("KatanaProvider") katanaProvider: KatanaProvider,
     @inject(TYPES.ThrowableWeapon) shuriken: ThrowableWeapon
   ) {
     this.katanaProvider = katanaProvider;
@@ -47,4 +47,4 @@ class Ninja implements Warrior {
   }
 }
 
-export {Ninja, Katana, Shuriken}
+export { Ninja, Katana, Shuriken };

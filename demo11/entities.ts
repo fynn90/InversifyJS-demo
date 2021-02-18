@@ -1,35 +1,35 @@
 /*
  * @Author: Fan
  * @Date: 2021-02-02 19:14:03
- * @description:
+ * @description: 
  */
-import { injectable, inject } from "inversify";
+import {injectable, inject, named} from "inversify";
 import "reflect-metadata";
-import { Weapon, ThrowableWeapon, Warrior } from "./interfaces";
+import {Weapon, ThrowableWeapon, Warrior} from "./interfaces"
 import { TYPES } from "./types";
 
 @injectable()
 class Katana implements Weapon {
   public hit() {
-    return "cut!";
+    return 'Katana cut!'
   }
 }
 
 @injectable()
-class Shuriken implements ThrowableWeapon {
-  public throw() {
-    return "hit!";
+class Shuriken implements Weapon {
+  public hit() {
+    return 'Shuriken hit!'
   }
 }
 
 @injectable()
 class Ninja implements Warrior {
   private _katana: Weapon;
-  private _shuriken: ThrowableWeapon;
+  private _shuriken: Weapon;
 
   public constructor(
-    @inject(TYPES.Weapon) katana: Weapon,
-    @inject(TYPES.ThrowableWeapon) shuriken: ThrowableWeapon
+    @inject(TYPES.Weapon) @named('strong')  katana: Weapon,
+    @inject(TYPES.Weapon) @named('weak') shuriken: Weapon
   ) {
     this._katana = katana;
     this._shuriken = shuriken;
@@ -38,8 +38,8 @@ class Ninja implements Warrior {
     return this._katana.hit();
   }
   sneak(): string {
-    return this._shuriken.throw();
+    return this._shuriken.hit();
   }
 }
 
-export { Ninja, Katana, Shuriken };
+export {Ninja, Katana, Shuriken}
